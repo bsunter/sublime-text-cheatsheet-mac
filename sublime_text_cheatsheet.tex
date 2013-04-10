@@ -1,0 +1,310 @@
+\documentclass[10pt,landscape]{article}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[landscape]{geometry}
+\usepackage{amsmath,amsthm,amsfonts,amssymb}
+\usepackage{color,graphicx,overpic}
+\usepackage{hyperref}
+\usepackage[os=mac, mackeys=symbols]{menukeys}
+
+
+\pdfinfo{
+  /Title (example.pdf)
+  /Creator (TeX)
+  /Producer (pdfTeX 1.40.0)
+  /Author (Seamus)
+  /Subject (Example)
+  /Keywords (pdflatex, latex,pdftex,tex)}
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+    { \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+    {\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+        {\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+    }
+
+% Turn off header and footer
+\pagestyle{empty}
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+%My Environments
+\newtheorem{example}[section]{Example}
+% -----------------------------------------------------------------------
+
+\begin{document}
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{\underline{Sublime Text Cheatsheet (Mac)}} \\
+     \small{Version 1.1, updated \today}
+\end{center}
+
+\section{General}
+\keys{\cmd+\shift+P} Command Palette \\
+\keys{\cmd+P} Goto Anything \\
+\keys{\cmd+R} Goto Symbol \\
+\keys{\cmd+N} New File \\
+\keys{\cmd+S} Save File \\
+\keys{\cmd+\shift+S} Save File As \\
+\keys{\cmd+\Alt+S} Save All \\
+\keys{\cmd+O} Open File \\
+\keys{\cmd+W} Close File \\
+\keys{\cmd+\shift+T} Reopen Closed File \\
+\keys{\cmd+\shift+N} New Window \\
+\keys{\cmd+\shift+W} Close Window \\
+\keys{\cmd+K}, \keys{\cmd+B} Show Sidebar \\
+\keys{\ctrl+`} Show Console \\
+\keys{\cmd+\ctrl+F} Enter Full Screen \\
+\keys{\cmd+\ctrl+\shift+F} Enter Distraction Free Mode \\
+
+\section{Moving/editing}
+\keys{\cmd+Z} Undo \\
+\keys{\cmd+\shift+Z} Redo \\
+\keys{\cmd+Y} Repeat \\
+\keys{\cmd+C} Copy \\
+\keys{\ctrl+Y} Yank (inserts the text that's on top of the kill ring)\\
+\keys{\cmd+X} Cut \\
+\keys{\cmd+V} Paste \\
+\keys{\cmd+\shift+V} Paste and Indent \\
+\keys{\cmd+]} Indent \\
+\keys{\cmd+[} Unindent \\
+\keys{\cmd+\ctrl+\arrowkeyup}/\keys{\arrowkeydown} Swap Line Up/Down \\
+\keys{\cmd+\shift+D} Duplicate Line \\
+\keys{\ctrl+\shift+K} Delete (kill) Line \\
+\keys{\cmd+J} Join Lines \\
+\keys{\cmd+/} Toggle Comment \\
+\keys{\cmd+\Alt+/} Toggle Block Comment \\
+\keys{\cmd+\shift+\return} Insert Line Before \\
+\keys{\cmd+\return} Insert Line After \\
+\keys{\cmd+\backspace} Delete to Beginning of Line \\
+\keys{\ctrl+K} Delete to End of Line \\
+\keys{\ctrl+A} Move to Beginning of Line \\
+\keys{\ctrl+E} Move to End of Line \\
+\keys{\ctrl+P}(revious) Move Up \\
+\keys{\ctrl+F}(orward) Move Right \\
+\keys{\ctrl+N}(ext) Move Down \\
+\keys{\ctrl+B}(ack) Move Left \\
+\keys{\ctrl+T} Transpose (swap two characters or words; buggy behaviour) \\
+\keys{\cmd+\Alt+.} Close Tag \\
+\keys{\ctrl+\shift+W} Wrap Selection with Tag \\
+\keys{\cmd+K}, \keys{\cmd+U} Convert Selected Text to Uppercase \\
+\keys{\cmd+K}, \keys{\cmd+L} Convert Selected Text to Lowercase \\
+\keys{\cmd+\Alt+Q} Wrap Paragraph at Ruler \\
+\keys{F5} Sort Lines \\
+\keys{F5} Sort Lines (Case Sensitive) \\
+\keys{\ctrl+G} Goto Line \\
+\keys{\ctrl+M} Jump to Matching Brackets (does not work with HTML/XML tags) \\
+\keys{\ctrl+L} Scroll to Selection (centers the screen to cursor) \\
+\keys{\ctrl+\Alt+\arrowkeyup}/\keys{\arrowkeydown} Scroll Line Up/Down \\
+\keys{\ctrl+Q} Record Macro \\
+\keys{\ctrl+\shift+Q} Playback Macro
+
+\section{Selection}
+\keys{\cmd+U} Undo \\
+\keys{\cmd+\shift+U} Soft Redo \\
+\keys{\cmd+\shift+L} Split Selection Into Lines (inserts multiple cursors) \\
+\keys{\ctrl+\shift+\arrowkeyup}/\keys{\arrowkeydown} Add Previous/Next Line (inserts multiple cursors) \\
+\keys{\esc} Single Selection (when there are multiple selections; exits to visual mode first if you are in insert mode) \\
+\keys{\cmd+A} Select All \\
+\keys{\cmd+D} Expand Selection to Word \\
+\keys{\cmd+L} Expand Selection to Line \\
+\keys{\cmd+\shift+A} Expand Selection to Tag (HTML/XML) \\
+\keys{\cmd+\shift+\space} Expand Selection to Scope \\
+\keys{\ctrl+\shift+M} Expand Selection to Brackets \\
+\keys{\cmd+\shift+J} Expand Selection to Indentation \\
+
+\section{Search/replace}
+\keys{\cmd+F} Find \\
+\keys{\cmd+G} Find Next \\
+\keys{\cmd+\shift+G} Find Previous \\
+\keys{\cmd+I} Incremental Find \\
+\keys{\cmd+\Alt+F} Replace \\
+\keys{\cmd+\Alt+E} Replace Next \\
+\keys{\cmd+\Alt+G} Quick Find (searches for the word under the cursor) \\
+\keys{\cmd+\ctrl+G} Quick Find All (selects all occurences of the word under the cursor) \\
+\keys{\cmd+E} Use Selection for Find \\
+\keys{\cmd+\shift+E} Use Selection for Replace \\
+\keys{\cmd+\shift+F} Find in Files (all open files) \\
+\keys{F4} Next Result (file search results) \\
+\keys{\shift+F4} Previous Result (file search results)
+
+\section{Folding}
+\keys{\cmd+\Alt+[} Fold (selection) \\
+\keys{\cmd+\Alt+]} Unfold \\
+\keys{\cmd+K}, \keys{\cmd+J} Unfold All \\
+\keys{\cmd+K}, \keys{\cmd+1} Fold All \\
+\keys{\cmd+K}, \keys{\cmd+2-9} Fold Level 2-9 \\
+\keys{\cmd+K}, \keys{\cmd+T} Fold Tag Attributes (HTML/XML)
+
+\section{Bookmarking}
+\keys{\cmd+K}, \keys{\cmd+\space} Set Mark \\
+\keys{\cmd+K}, \keys{\cmd+A} Select to Mark \\
+\keys{\cmd+K}, \keys{\cmd+W} Delete to Mark \\
+\keys{\cmd+K}, \keys{\cmd+X} Swap with Mark \\
+\keys{\cmd+K}, \keys{\cmd+G} Clear to Mark \\
+\keys{\cmd+F2} Toggle Bookmark \\
+\keys{F2} Next Bookmark \\
+\keys{\shift+F2} Previous Bookmark \\
+\keys{\cmd+\shift+F2} Clear Bookmarks
+
+\section{Miscellaneous}
+\keys{F6} Toggle Spell Check \\
+\keys{\ctrl+F6} Next Misspelling \\
+\keys{\ctrl+\shift + F6} Previous Misspelling \\
+\keys{\cmd+B} Build \\
+\keys{\ctrl+\space} Show Completions \\
+\keys{\cmd+\Alt+T} Special Characters
+
+\section{Vintage Mode}
+Most basic vim commands should work (command mode only obviously) and can be preceded with a count. \\
+\keys{.} Repeat \\
+\keys{d}, \keys{count} (optional), \keys{motion}/\keys{dd}/\keys{D} Delete motion (e.g. a word) or delete line or delete line to end  \\
+\keys{c}, \keys{count} (optional), \keys{motion}/\keys{C} Change motion or change until end of line (enters insert mode) \\
+\keys{y}, \keys{count} (optional), \keys{motion}/\keys{yy} Yank motion or yank (copy) Line \\
+\keys{p}/\keys{P} Paste yanked/deleted text after/before the cursor \\
+\keys{0}/\keys{\$} Move to the beginning/end of a line \\
+\keys{g} Most of \keys{g}'s power is not implemented in Vintage Mode. You can use the basic combinations \keys{gg} and \keys{G} to move to the top/bottom of the file. \keys{number}, \keys{gg} to move to that line. \keys{ga} to display character encoding in the status bar. \\
+\keys{a}/\keys{A} Append to cursor/line (enters insert mode) \\
+\keys{i}/\keys{I} Insert before cursor/line (enters insert mode) \\
+\keys{w}/\keys{W} Move forward a Word/WORD (WORDs are whitespace-separated words) \\
+\keys{b}/\keys{B} Move backwards a Word/WORD \\
+\keys{e}/\keys{E} Move to the end of a Word/WORD \\
+\keys{f}, \keys{character}/\keys{F}, \keys{character} Find (character) forward/backwards on the current line \\
+\keys{r}, \keys{character} Replace character under cursor \\
+\keys{t}/\keys{T} 'till (forward/backward) Used in combination with motions like \keys{c} or \keys{d}. For example, \keys{d}, \keys{t}, \keys{\{} deletes everything until the next \texttt{\{} character (on the current line).  \\
+\keys{o}/\keys{O} Open line below/above (enters insert mode) \\
+\keys{\{}/\keys{\}} Move to the beginning/end of a paragraph \\
+\keys{s}/\keys{S} or \keys{cc} Substitute character/line (enters insert mode) \\
+\keys{H}(igh)/\keys{M}(id)/\keys{L}(ow) Move cursor to the top/middle/bottom of the screen \\
+\keys{J} Join Lines \\
+\keys{ZZ} Close File \\
+\keys{x} Delete character under cursor \\
+\keys{X} Backspace \\
+\keys{v}/\keys{V} Enters Visual Mode/Visual Line Mode \\
+\keys{n}/\keys{N} Find next/previous occurence of search \\
+\keys{>}, \keys{>}/\keys{<}, \keys{<} Indent/Unindent \\
+\keys{\textasciitilde} Swap Case \\
+\keys{q}, \keys{character}/\keys{@}, \keys{character} Record/play macro
+
+\newpage
+
+\section{Remapped commands}
+\keys{\ctrl+S} Show Sidebar \\
+\keys{\cmd+\ctrl+K} Swap Line Up \\
+\keys{\cmd+\ctrl+J} Swap Line Down \\
+\keys{\cmd+\shift+K} Delete (kill) Line \\
+
+\section{Plug-ins}
+\subsection{AdvancedNewFile}
+\keys{\cmd+\Alt+N} New file from file/project directory (you can autocomplete directories) \\
+\keys{\cmd+\shift+\Alt+N} New file from file/project directory (adds an \texttt{\_\_init\_\_.py} file to each directory created)
+
+\subsection{Alignment}
+\keys{\cmd+\ctrl+A} Aligns a multi-line selection to indentation or a "=" character
+
+\subsection{BracketHighlighter}
+\textbf{remapped} \keys{\cmd+\shift+B}, \keys{\cmd+\shift+S} Select text between brackets \\
+\textbf{remapped} \keys{\cmd+\shift+B}, \keys{\cmd+\shift+[} Fold text between brackets \\
+\textbf{remapped} \keys{\Alt+\arrowkeyup}/\keys{\arrowkeydown} Move between brackets
+
+\subsection{ColorPicker}
+\keys{\cmd+\shift+C} Pops up a color picker and, after picking a color, inserts a hexcode
+
+\subsection{DashDoc}
+\keys{\ctrl+H} Uses the current selection to search in Dash\cite{1}
+
+\subsection{DocBlockr}
+\keys{/}, \keys{*}, \keys{*}, \keys{\return} or \keys{/}, \keys{*}, \keys{\return} Creates a comment block. Provides type hinting in PHP if it precedes a function declaration.
+
+\subsection{EasyMotion}
+\keys{\cmd+;}, \keys{character} Places labels on the character you typed. Type the corresponding label-character to move the cursor to that position.
+
+\subsection{Emmet}
+\textbf{remapped} \keys{\ctrl+X} Expand abbreviation (e.g. \texttt{ul>li.listitem*6>a}) \\
+\keys{p}, \keys{2}, \keys{0}, \keys{\tab} expands to \texttt{padding: 20px} \\
+\keys{f}, \keys{z}, \keys{\tab} expands to \texttt{font-size:}
+
+\subsection{PlainTasks}
+Formats your TODO files as checklists. \\
+Appending a \keys{:} to words (like so Front-end:) creates headers. \\
+\keys{\cmd+\return} Create a new task \\
+\keys{\cmd+D} Finish/unfinish a task \\
+You can add tags with \keys{@}
+
+\subsection{SFTP}
+Most of the explanations are directly copied from \url{http://wbond.net/sublime_packages/sftp/usage} \\
+
+\subsubsection{Remote Workflow}
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+F} Upload the current file \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+C} Upload changed files since last commit \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+N} Upload open files \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+O} Download the remote version of the selected file and overwrite the local copy \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+R} Upload the entire folder the current file is located in \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+E} Download the entire folder the current file is located in \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+I} Download the remote version of a file to a temp location and diff it with the local version \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+Y} Compare file modification times and confirm actions before uploading the selected file or folder. This will also delete files off of the remote server that do not exist locally. \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+D} Compare file modification times and confirm actions before downloading the selected file or folder. This will also delete files off of the local machine that do not exist remotely. \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+B} Compare file modification times and confirm actions before uploading/downloading the selected file or folder. This will never delete files, and will always perform the action that causes the newest file to be present in both locations. \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+M} Watch the file for modifications (from Sublime or other applications). When the file modification time changes, the file will be uploaded. \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+W} Open the server quick panel browser at the remote folder corresponding to the selected file or folder. \\
+
+\subsubsection{Server Workflow}
+\keys{\cmd+\ctrl+R}, \keys{\cmd+\ctrl+S} Setup a new server. \\
+\keys{\cmd+\ctrl+R}, \keys{\cmd+\ctrl+B} List the servers, with an option to setup a new one. \\
+\keys{\cmd+\ctrl+R}, \keys{\cmd+\ctrl+N} Show the current directory listing for the last used server. \\
+\keys{\cmd+\ctrl+R}, \keys{\cmd+\ctrl+E} List the servers for the purpose of editing. \\
+\keys{\cmd+\ctrl+R}, \keys{\cmd+\ctrl+D} List the servers for the purpose of deletion. \\
+
+\subsubsection{Both Workflows}
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+S} Show the SFTP activity panel \\
+\keys{\cmd+\ctrl+U}, \keys{\cmd+\ctrl+X} Stop the current SFTP/FTP server activity (connection, upload or download)
+
+% You can even have references
+\rule{0.3\linewidth}{0.25pt}
+\scriptsize
+\bibliographystyle{abstract}
+\bibliography{sublime_text_cheatsheet}
+\end{multicols}
+
+\end{document}
