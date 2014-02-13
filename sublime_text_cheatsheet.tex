@@ -77,7 +77,7 @@
 
 \begin{center}
      \Large{\underline{Sublime Text Cheatsheet (Mac)}} \\
-     \small{Version 1.3, updated \today}
+     \small{Version 1.4, updated \today}
 \end{center}
 
 \section{General}
@@ -125,14 +125,14 @@
 \keys{\ctrl+F}(orward) Move Right \\
 \keys{\ctrl+N}(ext) Move Down \\
 \keys{\ctrl+B}(ack) Move Left \\
-\keys{\ctrl+T} Transpose (swap two characters or words; buggy behaviour) \\
+\keys{\ctrl+T} Transpose \\
 \keys{\cmd+\Alt+.} Close Tag \\
 \keys{\ctrl+\shift+W} Wrap Selection with Tag \\
 \keys{\cmd+K}, \keys{\cmd+U} Convert Selected Text to Uppercase \\
 \keys{\cmd+K}, \keys{\cmd+L} Convert Selected Text to Lowercase \\
 \keys{\cmd+\Alt+Q} Wrap Paragraph at Ruler \\
 \keys{F5} Sort Lines \\
-\keys{F5} Sort Lines (Case Sensitive) \\
+\keys{\ctrl+F5} Sort Lines (Case Sensitive) \\
 \keys{\ctrl+G} Goto Line \\
 \keys{\ctrl+M} Jump to Matching Brackets (does not work with HTML/XML tags) \\
 \keys{\ctrl+L} Scroll to Selection (centers the screen to cursor) \\
@@ -145,7 +145,7 @@
 \keys{\cmd+\shift+U} Soft Redo \\
 \keys{\cmd+\shift+L} Split Selection Into Lines (inserts multiple cursors) \\
 \keys{\ctrl+\shift+\arrowkeyup}/\keys{\arrowkeydown} Add Previous/Next Line (inserts multiple cursors) \\
-\keys{\esc} Single Selection (when there are multiple selections; exits to visual mode first if you are in insert mode) \\
+\keys{\esc} Single Selection (when there are multiple selections) \\
 \keys{\cmd+A} Select All \\
 \keys{\cmd+D} Expand Selection to Word \\
 \keys{\cmd+L} Expand Selection to Line \\
@@ -174,7 +174,7 @@
 \keys{\cmd+\Alt+]} Unfold \\
 \keys{\cmd+K}, \keys{\cmd+J} Unfold All \\
 \keys{\cmd+K}, \keys{\cmd+1} Fold All \\
-\keys{\cmd+K}, \keys{\cmd+2-9} Fold Level 2-9 \\
+\keys{\cmd+K}, \keys{\cmd+2-9} Fold Level 1-9 \\
 \keys{\cmd+K}, \keys{\cmd+T} Fold Tag Attributes (HTML/XML)
 
 \section{Bookmarking}
@@ -182,7 +182,7 @@
 \keys{\cmd+K}, \keys{\cmd+A} Select to Mark \\
 \keys{\cmd+K}, \keys{\cmd+W} Delete to Mark \\
 \keys{\cmd+K}, \keys{\cmd+X} Swap with Mark \\
-\keys{\cmd+K}, \keys{\cmd+G} Clear to Mark \\
+\keys{\cmd+K}, \keys{\cmd+G} Clear Mark \\
 \keys{\cmd+F2} Toggle Bookmark \\
 \keys{F2} Next Bookmark \\
 \keys{\shift+F2} Previous Bookmark \\
@@ -204,7 +204,7 @@ Most basic vim commands should work (command mode only obviously) and can be pre
 \keys{y}, \keys{count} (optional), \keys{motion}/\keys{yy} Yank motion or yank (copy) Line \\
 \keys{p}/\keys{P} Paste yanked/deleted text after/before the cursor \\
 \keys{0}/\keys{\$} Move to the beginning/end of a line \\
-\keys{g} Most of \keys{g}'s power is not implemented in Vintage Mode. You can use the basic combinations \keys{gg} and \keys{G} to move to the top/bottom of the file. \keys{number}, \keys{gg} to move to that line. \keys{ga} to display character encoding in the status bar. \\
+\keys{g} Most of \keys{g}'s power is not implemented in Vintage Mode. You can use the basic combinations \keys{gg} and \keys{G} to move to the top/bottom of the file. \keys{number}, \keys{gg}/\keys{G} to move to that line. \\
 \keys{a}/\keys{A} Append to cursor/line (enters insert mode) \\
 \keys{i}/\keys{I} Insert before cursor/line (enters insert mode) \\
 \keys{w}/\keys{W} Move forward a Word/WORD (WORDs are whitespace-separated words) \\
